@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>*{cursor:none;}</style>
+</head>
+<body>
+  <!-- Particle Canvas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Intro Section -->
+  <div class="intro-section">
+    <h1 id="typewriter"></h1>
+    <ul class="self-intro">
+      <li>A commerce student with a thoughtful personality</li>
+      <li>Not very talkative, but a deep thinker</li>
+      <li>Slim and simple in appearance</li>
+      <li>Under 20, full of curiosity and learning spirit</li>
+      <li>My heart is already committed elsewhere</li>
+      <li>I value silence more than noise, peace more than show</li>
+    </ul>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Sound Effect -->
+  <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+  <script>
+    document.querySelectorAll('li, h1').forEach(el => {
+      el.addEventListener('click', () => {
+        document.getElementById('clickSound').play();
+      });
+    });
+  </script>
+</body>
+</html>

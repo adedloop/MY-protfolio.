@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.intro-section {
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-size: 3em;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.self-intro {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-inline: auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  animation: slideUp 2s ease-out;
+  list-style: none;
+  text-align: left;
+}
+
+.self-intro li {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  position: relative;
+  padding-left: 25px;
+}
+
+.self-intro li::before {
+  content: '➤';
+  position: absolute;
+  left: 0;
+  color: #00ffe7;
+  animation: bounce 1s infinite alternate;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00ffe7;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #00ffe7;
+  transition: transform 0.1s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7; }
+  to { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+}
